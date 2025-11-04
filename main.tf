@@ -57,7 +57,7 @@ module "blog_alb" {
 
   name    = "blog_alb_new"
   vpc_id  = "blog_vpc.vpc_id"
-  subnets = [module.blog_vpc.public_subnets
+  subnets = [module.blog_vpc.public_subnets]
   security_groups = module.blog_sg.security_group_id
   }
 
@@ -70,8 +70,8 @@ module "blog_alb" {
       target_type      = "instance"
       targets = {
         my_target = {
-        target_id      = aws_instance.blog.id"
-        port           = 80
+          target_id      = aws_instance.blog.id
+          port           = 80
         }
       }
     }
