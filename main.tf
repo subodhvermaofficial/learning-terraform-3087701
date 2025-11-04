@@ -19,7 +19,7 @@ data "aws_vpc" "default" {
 
 }
 
-module "vpc" {
+module "blog_vpc" {
   source = "terraform-aws-modules/vpc/aws"
 
   name = "dev"
